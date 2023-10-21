@@ -112,11 +112,19 @@ function link(board: Board) {
  *
  * @param board The board to be randomized.
  * @param rounds The number of simulation steps to take in the randomization
+ * @returns An array containing the lights that where toggled, in the order
+ * they where toggled,
  */
 function randomize(board: Board, rounds = 1) {
+  const steps: Light[] = [];
   for (let n = 0; n < rounds; n++) {
     const x = Math.floor(Math.random() * board.lights.length);
     const y = Math.floor(Math.random() * board.lights[0].length);
-    board.get(x, y)?.toggle();
+    const light = board.get(x, y);
+    if (light) {
+      light.toggle();
+      steps.push(light);
+    }
   }
+  return steps;
 }
