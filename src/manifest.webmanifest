@@ -1,6 +1,6 @@
 {
-  "name": "lights-out",
-  "short_name": "lights-out",
+  "name": "Switch",
+  "short_name": "Switch",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
