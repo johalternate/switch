@@ -1,5 +1,4 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { board } from 'src/app/core/models/board';
 import { BoardCmp } from 'src/app/core/components/board/board.cmp';
 import { Light } from 'src/app/core/models/light';
@@ -13,7 +12,7 @@ const rounds = 50;
 @Component({
   selector: 'app-classic',
   standalone: true,
-  imports: [CommonModule, BoardCmp],
+  imports: [BoardCmp],
   template: `
     <div class="container">
       <app-board [lights]="lights()" (toggle)="toggle($event)" />

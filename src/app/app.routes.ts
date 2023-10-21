@@ -19,4 +19,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./scenes/classic/classic.cmp').then((m) => m.ClassicCmp),
   },
+  {
+    path: 'endless',
+    loadComponent: () =>
+      import('./scenes/endless/endless.cmp').then((m) => m.EndlessCmp),
+  },
 ];

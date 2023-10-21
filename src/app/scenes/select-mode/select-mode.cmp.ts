@@ -24,5 +24,8 @@ import { GameModeInfo } from 'src/app/core/interfaces/game-mode-info';
   `,
 })
 export class SelectModeCmp {
-  modes = signal<GameModeInfo[]>([{ label: 'Classic', url: '/classic' }]);
+  modes = signal<GameModeInfo[]>([
+    { label: 'Classic', url: '/classic' },
+    { label: 'Endless', url: '/endless' },
+  ]);
 }
