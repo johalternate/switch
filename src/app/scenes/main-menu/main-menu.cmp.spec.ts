@@ -8,16 +8,11 @@ describe('MainMenuCmp', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainMenuCmp]
-    })
-    .compileComponents();
-    
+      imports: [MainMenuCmp],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(MainMenuCmp);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

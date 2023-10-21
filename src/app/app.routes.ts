@@ -7,4 +7,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./scenes/main-menu/main-menu.cmp').then((m) => m.MainMenuCmp),
   },
+  {
+    path: 'select-mode',
+    loadComponent: () =>
+      import('./scenes/select-mode/select-mode.cmp').then(
+        (m) => m.SelectModeCmp
+      ),
+  },
 ];

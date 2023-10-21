@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,18 +6,10 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <a routerLink="select-mode"><h1>Play</h1></a>
-    <a routerLink="select-mode"><h1>Settings</h1></a>
+    <div class="options">
+      <a routerLink="/select-mode"><h1>Play</h1></a>
+      <a routerLink="/settings"><h1>Settings</h1></a>
+    </div>
   `,
-  styles: [
-    `
-      :host {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    `,
-  ],
 })
 export class MainMenuCmp {}
