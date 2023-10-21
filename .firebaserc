@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "johalternate": {
+      "hosting": {
+        "switch": [
+          "switch-johalternate"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "switch-johalternate"
+  }
+}
