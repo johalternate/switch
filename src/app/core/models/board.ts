@@ -32,15 +32,15 @@ export interface Board {
 }
 
 /**
- * Creates a board, initializes it and randomizes its state by toggling {cycles} lights
+ * Creates a board, initializes it and randomizes its state.
  * @param size The number of rows and columns in the board.
- * @param cycles The number of cycles to run in the randomization step. @see randomize.
+ * @param rounds The number of rounds to run in the randomization step. @see randomize.
  * @returns An initialized board of the given size.
  */
-export function board(size: number, cycles: number) {
+export function board(size: number, rounds: number) {
   const board = create(size);
   link(board);
-  randomize(board, cycles);
+  randomize(board, rounds);
   return board;
 }
 
@@ -111,10 +111,10 @@ function link(board: Board) {
  * Boards are created with all lights off.
  *
  * @param board The board to be randomized.
- * @param cycles The number of simulation steps to take in the randomization
+ * @param rounds The number of simulation steps to take in the randomization
  */
-function randomize(board: Board, cycles = 1) {
-  for (let n = 0; n < cycles; n++) {
+function randomize(board: Board, rounds = 1) {
+  for (let n = 0; n < rounds; n++) {
     const x = Math.floor(Math.random() * board.lights.length);
     const y = Math.floor(Math.random() * board.lights[0].length);
     board.get(x, y)?.toggle();

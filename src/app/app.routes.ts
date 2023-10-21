@@ -14,4 +14,9 @@ export const routes: Routes = [
         (m) => m.SelectModeCmp
       ),
   },
+  {
+    path: 'classic',
+    loadComponent: () =>
+      import('./scenes/classic/classic.cmp').then((m) => m.ClassicCmp),
+  },
 ];
