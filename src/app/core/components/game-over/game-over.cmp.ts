@@ -3,12 +3,11 @@ import {} from '@angular/common';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { GameOverResult } from '../../interfaces/game-over-result';
 import { GameOverData } from '../../interfaces/game-over-data';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-game-over',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   template: `
     <div style="text-align: center;">
       @if (data?.titleIcon) {
@@ -17,15 +16,10 @@ import { RouterLink } from '@angular/router';
       <h2 class="title">
         {{ data?.title || 'Game Over' }}
       </h2>
-      <!-- TODO: Remove javascript:void(0) as use a properly styled button -->
-      <a
-        role="button"
-        (click)="dialog.close({ playAgain: true })"
-        href="javascript:void(0);"
-      >
+      <a role="button" (click)="dialog.close({ playAgain: true })">
         <h4>Play Again?</h4>
       </a>
-      <a role="button" routerLink="/main-menu" (click)="dialog.close()">
+      <a role="button" (click)="dialog.close({ navigateTo: '/main-menu' })">
         <h4>Main Menu</h4>
       </a>
     </div>
@@ -42,6 +36,6 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class GameOverCmp {
-  data = inject<GameOverData>(DIALOG_DATA, { optional: true });
-  dialog = inject(DialogRef<GameOverResult>);
+  readonly data = inject<GameOverData>(DIALOG_DATA, { optional: true });
+  readonly dialog = inject(DialogRef<GameOverResult>);
 }
