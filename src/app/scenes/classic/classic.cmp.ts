@@ -9,7 +9,7 @@ import { GameOverResult } from 'src/app/core/interfaces/game-over-result';
 import { ToolbarCmp } from 'src/app/core/components/toolbar/toolbar.cmp';
 import { Router } from '@angular/router';
 
-const rounds = 1;
+const rounds = 50;
 
 @Component({
   selector: 'app-classic',
