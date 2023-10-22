@@ -24,7 +24,10 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(DialogModule),
     {
       provide: DEFAULT_DIALOG_CONFIG,
-      useValue: { backdropClass: 'backdrop-dark' } satisfies DialogConfig,
+      useValue: {
+        backdropClass: 'backdrop-dark',
+        hasBackdrop: true,
+      } satisfies DialogConfig,
     },
   ],
 };

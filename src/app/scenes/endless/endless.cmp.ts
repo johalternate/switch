@@ -1,5 +1,6 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { BoardCmp } from 'src/app/core/components/board/board.cmp';
+import { ToolbarCmp } from 'src/app/core/components/toolbar/toolbar.cmp';
 import { board } from 'src/app/core/models/board';
 import { Light } from 'src/app/core/models/light';
 
@@ -8,8 +9,9 @@ const rounds = 50;
 @Component({
   selector: 'app-endless',
   standalone: true,
-  imports: [BoardCmp],
+  imports: [BoardCmp, ToolbarCmp],
   template: `
+    <app-toolbar />
     <div class="container">
       <h4>Finished: {{ gamesFinished() }}</h4>
       <app-board [lights]="lights()" (toggle)="toggle($event)" />
